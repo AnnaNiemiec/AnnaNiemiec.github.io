@@ -88,6 +88,8 @@ Powered by Hydejack v8.4.0 <https://hydejack.com/>
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
 
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
 
 
 <link rel="dns-prefetch" href="/" id="_baseURL">
@@ -833,7 +835,7 @@ copy of the Program in return for a fee.</p>
 <footer role="contentinfo">
   <hr/>
   
-    <p><small class="copyright">© 2018. All rights reserved.
+    <p><small class="copyright">© 2020. All rights reserved.
 </small></p>
   
   
@@ -1005,6 +1007,33 @@ copy of the Program in return for a fee.</p>
   <!--<![endif]-->
 
   
+  <script>!function(w, d) {
+    w.ga=w.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    /**/
+      ga('create', 'UA-167587296-1', 'auto');
+    /**/
+
+    var pushStateEl = d.getElementsByTagName('hy-push-state')[0];
+    var timeoutId;
+    pushStateEl.addEventListener('hy-push-state-load', function() {
+      w.clearTimeout(timeoutId);
+      timeoutId = w.setTimeout(function() {
+        ga('set', 'page', w.location.pathname);
+        ga('send', 'pageview');
+      }, 500);
+    });
+
+    d.addEventListener('hy--cookies-ok', function () {
+      w.ga(function(tracker) {
+        w.ga("set", "anonymizeIp", undefined);
+        localStorage && localStorage.setItem("ga--client-id", tracker.get("clientId"));
+      });
+    });
+
+    w.loadJSDeferred('https://www.google-analytics.com/analytics.js');
+  }(window, document);</script>
+
 
 
   <script>
