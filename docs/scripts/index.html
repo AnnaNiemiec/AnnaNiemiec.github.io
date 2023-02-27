@@ -36,9 +36,9 @@ Powered by Hydejack v8.4.0 <https://hydejack.com/>
 
 
   
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Scripts | Anna Niemiec</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Scripts" />
 <meta name="author" content="Anna Niemiec" />
 <meta property="og:locale" content="en" />
@@ -47,8 +47,11 @@ Powered by Hydejack v8.4.0 <https://hydejack.com/>
 <link rel="canonical" href="https://annaniemiec.github.io/docs/scripts/" />
 <meta property="og:url" content="https://annaniemiec.github.io/docs/scripts/" />
 <meta property="og:site_name" content="Anna Niemiec" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Scripts" />
 <script type="application/ld+json">
-{"description":"There are two ways of adding third party scripts. Embedding is ideal for one-off scripts, while global scripts are loaded on every page.","author":{"@type":"Person","name":"Anna Niemiec"},"@type":"WebPage","url":"https://annaniemiec.github.io/docs/scripts/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://annaniemiec.github.io/assets/img/photo2.jpg"},"name":"Anna Niemiec"},"headline":"Scripts","@context":"http://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Anna Niemiec"},"description":"There are two ways of adding third party scripts. Embedding is ideal for one-off scripts, while global scripts are loaded on every page.","headline":"Scripts","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://annaniemiec.github.io/assets/img/photo2.jpg"},"name":"Anna Niemiec"},"url":"https://annaniemiec.github.io/docs/scripts/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -201,9 +204,8 @@ Powered by Hydejack v8.4.0 <https://hydejack.com/>
 
   </header>
 
-  
-<p>There are two ways of adding third party scripts.
-<a href="#embedding">Embedding</a> is ideal for one-off scripts, e.g. <code class="highlighter-rouge">widgets.js</code> that is part of embedded tweets (see below).
+  <p>There are two ways of adding third party scripts.
+<a href="#embedding">Embedding</a> is ideal for one-off scripts, e.g. <code class="language-plaintext highlighter-rouge">widgets.js</code> that is part of embedded tweets (see below).
 Adding <a href="#global-scripts">global scripts</a> is for scripts that should be loaded on every page.</p>
 
 <h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
@@ -236,7 +238,7 @@ Adding <a href="#global-scripts">global scripts</a> is for scripts that should b
 
 <h2 id="global-scripts">Global scripts</h2>
 <p>If you have scripts that should be included on every page you can add them globally by
-opening (or creating) <code class="highlighter-rouge">_includes/my-scripts.html</code> and adding them like you normally would:</p>
+opening (or creating) <code class="language-plaintext highlighter-rouge">_includes/my-scripts.html</code> and adding them like you normally would:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- file: _includes/my-scripts.html --&gt;</span>
 <span class="nt">&lt;script
@@ -245,32 +247,32 @@ opening (or creating) <code class="highlighter-rouge">_includes/my-scripts.html<
   <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">my-scripts.html</code> will be included at the end of the <code class="highlighter-rouge">body</code> tag.</p>
+<p><code class="language-plaintext highlighter-rouge">my-scripts.html</code> will be included at the end of the <code class="language-plaintext highlighter-rouge">body</code> tag.</p>
 
 <h2 id="registering-push-state-event-listeners">Registering push state event listeners</h2>
-<p>When embedding scripts globally you might want to run some init code after each page load. However, the problem with push state-based page loads is that the <code class="highlighter-rouge">load</code> event won’t fire again. Luckily, Hydejack’s push state component exposes an event that you can listen to instead.</p>
+<p>When embedding scripts globally you might want to run some init code after each page load. However, the problem with push state-based page loads is that the <code class="language-plaintext highlighter-rouge">load</code> event won’t fire again. Luckily, Hydejack’s push state component exposes an event that you can listen to instead.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- file: _includes/my-scripts.html --&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'hy-push-state'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'hy-push-state-load'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">hy-push-state</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">hy-push-state-load</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// </span><span class="o">&lt;</span><span class="nx">your</span> <span class="nx">init</span> <span class="nx">code</span><span class="o">&gt;</span>
   <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
 
-<p>Note that the above code must only run once, so include it in your <code class="highlighter-rouge">my-scripts.html</code>.</p>
+<p>Note that the above code must only run once, so include it in your <code class="language-plaintext highlighter-rouge">my-scripts.html</code>.</p>
 
 <dl>
-  <dt><code class="highlighter-rouge">hy-push-state-start</code></dt>
+  <dt><code class="language-plaintext highlighter-rouge">hy-push-state-start</code></dt>
   <dd>Occurs after clicking a link.</dd>
-  <dt><code class="highlighter-rouge">hy-push-state-ready</code></dt>
+  <dt><code class="language-plaintext highlighter-rouge">hy-push-state-ready</code></dt>
   <dd>Animation fished and response has been parsed, ready to swap out the content.</dd>
-  <dt><code class="highlighter-rouge">hy-push-state-after</code></dt>
+  <dt><code class="language-plaintext highlighter-rouge">hy-push-state-after</code></dt>
   <dd>The old content has been replaced with the new content.</dd>
-  <dt><code class="highlighter-rouge">hy-push-state-progress</code></dt>
+  <dt><code class="language-plaintext highlighter-rouge">hy-push-state-progress</code></dt>
   <dd>Special case when animation is finished, but no response from server has arrived yet.
 This is when the loading spinner will appear.</dd>
-  <dt><code class="highlighter-rouge">hy-push-state-load</code></dt>
+  <dt><code class="language-plaintext highlighter-rouge">hy-push-state-load</code></dt>
   <dd>All embedded script tags have been inserted into the document and have finished loading.</dd>
 </dl>
 

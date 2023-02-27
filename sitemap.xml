@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://annaniemiec.github.io/hydejack/</loc>
-<lastmod>2020-05-25T16:25:18+02:00</lastmod>
+<lastmod>2023-02-27T18:01:01+01:00</lastmod>
 </url>
 <url>
 <loc>https://annaniemiec.github.io/docs/</loc>
@@ -94,7 +94,11 @@
 <lastmod>2020-02-14T17:40:35+01:00</lastmod>
 </url>
 <url>
+<loc>https://annaniemiec.github.io/assets/img/research/niemiec2022.pdf</loc>
+<lastmod>2023-01-26T16:58:59+01:00</lastmod>
+</url>
+<url>
 <loc>https://annaniemiec.github.io/assets/img/resume.pdf</loc>
-<lastmod>2020-05-14T11:30:21+02:00</lastmod>
+<lastmod>2023-02-27T17:59:35+01:00</lastmod>
 </url>
 </urlset>
